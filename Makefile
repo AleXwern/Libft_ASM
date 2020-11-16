@@ -10,8 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft_asm.a
-SRCFILE = ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
+NAME	= libft_asm.a
+ELF		= elf64
+FLAG	= -no-pie
+SRCFILE	= ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 	ft_memccpy ft_putendl_fd ft_strdel ft_strncat ft_strtrim \
 	ft_atoi ft_memchr ft_putnbr ft_strdup ft_strncmp \
 	ft_tolower ft_bzero ft_memcmp ft_putnbr_fd ft_strequ \
@@ -25,33 +27,38 @@ SRCFILE = ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 	ft_intsize ft_isextascii get_next_line ft_puthex ft_lcm \
 	ft_abs ft_fabs ft_putnbrln ft_quadjoin \
 	ft_strfjoin ft_printmem
-TESTFILE = hello_world
-SRCEXT = .asm
-OBJEXT = .o
-SRC = $(addprefix $(TESTFILE),$(SRCEXT))
-OBJ = $(SRC:.asm=.o)
-INCLS = ./
-OBJFLD = ../obj/
-GREEN = \033[0;32m
-PURPLE = \033[0;35m
-STOP = \033[0m
+#This is to test spesific functions and removing it will allow entire thing to be used
+SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
+		ft_putstr.asm ft_putendl.asm
+SRCEXT	= .asm
+OBJEXT	= .o
+SRC		= $(addprefix ./src/,$(SRCFILE))
+OBJ		= $(addprefix ./obj/,$(SRCFILE:.asm=.o))
+INCLS	= ./
+OBJFLD	= ../obj/
+GREEN	= \033[0;32m
+PURPLE	= \033[0;35m
+STOP	= \033[0m
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-%.o:%.asm
-	nasm -f elf $<
+./obj/%.o:./src/%.asm
+	nasm -f $(ELF) $< -o $@
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 	@echo done
 
+test: $(NAME)
+	gcc -no-pie -I . tests/main.c $(NAME) -o testfunc
+
 clean:
-	@/bin/rm -f $(OBJ)
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all
