@@ -1,6 +1,6 @@
 # Libft_ASM
 The aim of this project is for me to learn more about x64 Assembly and at the side since Libft is used in</br>
-the school projects, maybe I can have an excuse to use this and gain some sort of performance gain from it.</br>
+the school projects maybe I can have an excuse to use this and get some sort of performance gain from it.</br>
 Compiles at least on Linux env. Have not tested on others.
 
 # Libft Functions
