@@ -29,7 +29,7 @@ SRCFILE	= ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 	ft_strfjoin ft_printmem
 #This is to test spesific functions and removing it will allow entire thing to be used
 SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
-		ft_putstr.asm ft_putendl.asm
+		ft_putstr.asm ft_putendl.asm ft_putchar.asm ft_memset.asm
 SRCEXT	= .asm
 OBJEXT	= .o
 SRC		= $(addprefix ./src/,$(SRCFILE))
@@ -54,6 +54,19 @@ $(NAME): $(OBJ)
 
 test: $(NAME)
 	gcc -no-pie -I . tests/main.c $(NAME) -o testfunc
+	./testfunc
+
+time:
+	@gcc -no-pie -I . tests/time.c $(NAME) -o time
+	@echo "timing ASM library."
+	@time ./time > ASM.txt
+	@/bin/rm -f time
+	@gcc -I . tests/time.c libft_c.a -o time
+	@echo "timing C library."
+	@time ./time > C.txt
+	@/bin/rm -f time
+	@/bin/rm -f C.txt
+	@/bin/rm -f ASM.txt
 
 clean:
 	/bin/rm -f $(OBJ)
