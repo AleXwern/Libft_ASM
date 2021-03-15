@@ -29,7 +29,8 @@ SRCFILE	= ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 	ft_strfjoin ft_printmem
 #This is to test spesific functions and removing it will allow entire thing to be used
 SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
-		ft_putstr.asm ft_putendl.asm ft_putchar.asm ft_memset.asm
+		ft_putstr.asm ft_putendl.asm ft_putchar.asm ft_memset.asm \
+		ft_atoi.asm
 SRCEXT	= .asm
 OBJEXT	= .o
 SRC		= $(addprefix ./src/,$(SRCFILE))

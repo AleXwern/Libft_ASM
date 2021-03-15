@@ -27,5 +27,7 @@ int	main(void)
 	ft_putstr(str);
 	printf("\nlen: %ld\n", ft_strlen(str));
 	ft_putendl("--AAA--");
+	printf("Number %d\n", ft_atoi("9875555"));
+	printf("NNumber %d\n", ft_atoi("-1275"));
 	return (0);
 }
