@@ -9,13 +9,13 @@ ft_atoi:
 	xor		eax, eax
 	test	rdi, rdi
 	jz		exit_zero
-	cmp		byte [rdi], 0x2D	;2D is '-' and 2B is '+'
+	cmp		byte [rdi], 0x2D	;0x2D is '-' and 0x2B is '+'
 	jz		set_negflag			;If value is '-' we set value to negative, else continue
 	mov		ecx, 1
 	jmp		status_comparison
 set_negflag:					;0x2D
 	mov		ecx, -1
-	inc		rdi	
+	inc		rdi
 status_comparison:
 	mov		dl, byte [rdi]
 	lea		esi, [rdx - 0x30]	;0x30 = '0'
