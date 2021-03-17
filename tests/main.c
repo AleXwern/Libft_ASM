@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_asm.h"
 #include <stdio.h>
 
 int	main(void)
@@ -34,5 +34,13 @@ int	main(void)
 	printf("Blank %d\n", ft_isblank(13));
 	printf("Print %d\n", ft_isprint(85));
 	printf("Negative %d\n", ft_isnegative(100));
+	char	str1[10];
+	ft_memset(str1, 'A', 9);
+	char	str2[] = "BBBBCBBBB";
+	printf("Before: %s %s\n", str1, str2);
+	char	*str3 = ft_memccpy(str1, str2, 'C', 9);
+	printf("After: %s %s and %s\n", str1, str2, str3);
+	printf("Memchr %s\n", ft_memchr(str1, 'C', 9));
+	printf("Diff %d\n", ft_memcmp(str2, str1, 6));
 	return (0);
 }

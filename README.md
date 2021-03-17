@@ -1,7 +1,7 @@
 # Libft_ASM
 The aim of this project is for me to learn more about x64 Assembly and at the side since Libft is used in</br>
 the school projects maybe I can have an excuse to use this and get some sort of performance gain from it. Most probably not but it's a fun little project anyway. If anything, using optimization flags is kinda sometimes forbidden maybe (it's so hazy if it is or not and I'd rather not twist hands about it) so if I just write the assembly like -OX then it's fine right?</br>
-Compiles at least on Linux env. Have not tested on others yet.
+Compiles at least on Linux env. Have not tested on others yet. Just run make in terminal and you can link the libft_asm.a to your program. libft_asm.h is the related C header.
 
 # Libft Functions
 
@@ -22,9 +22,9 @@ Compiles at least on Linux env. Have not tested on others yet.
 | itoa             | **X**                                                                                  |
 | lcm              | **X**                                                                                  |
 | memalloc         | **X**                                                                                  |
-| memccpy          | **X**                                                                                  |
-| memchr           | **X**                                                                                  |
-| memcmp           | **X**                                                                                  |
+| memccpy          | **YES**                                                                                  |
+| memchr           | **YES**                                                                                  |
+| memcmp           | **YES**                                                                                  |
 | memcpy           | **X**                                                                                  |
 | memdel           | **X**                                                                                  |
 | memmove          | **X**                                                                                  |
