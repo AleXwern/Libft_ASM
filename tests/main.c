@@ -23,7 +23,7 @@ int	main(void)
 	ft_putendl_fd("Error it is", 1);
 	ft_memset(str, 'A', 10);
 	str[9] = '\n';
-	write(1, str, 10);
+	//write(1, str, 10);
 	ft_putstr(str);
 	ft_putstr("IEAAAA\n");
 	printf("len: %ld\n", ft_strlen(str));
@@ -42,5 +42,6 @@ int	main(void)
 	printf("After: %s %s and %s\n", str1, str2, str3);
 	printf("Memchr %s\n", ft_memchr(str1, 'C', 9));
 	printf("Diff %d\n", ft_memcmp(str2, str1, 6));
+	printf("%s\n", ft_memmove(str1 + 1, str1, 4));
 	return (0);
 }

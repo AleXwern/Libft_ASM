@@ -4,10 +4,12 @@ section	.text
 ft_putchar:
 	mov		byte [endl+0], dil
 	mov		rcx, endl	;string
+	push	rbx
 	mov		rdx, 1		;len
 	mov		rbx, 1
 	mov		rax, 4
 	int     80h
+	pop		rbx
 	
 	ret
 
