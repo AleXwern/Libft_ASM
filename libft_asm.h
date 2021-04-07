@@ -116,4 +116,11 @@ void	ft_strdel(char **as);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+/*
+**     LibftASM-only functions
+*/
+t_uint32	ft_bswap(t_uint32 n);
+
+t_uint32	ft_test(t_uint32 n);
+
 #endif

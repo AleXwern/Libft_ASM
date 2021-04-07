@@ -15,7 +15,8 @@
 
 int	main(void)
 {
-	char	str[10];
+	char	*str = (char*)malloc(10);
+
 	//printf("Length %ld\n", ft_strlen("Hello there!"));
 	ft_putchar('Z');
 	ft_putstr("Yoo dudes\n");
@@ -40,8 +41,11 @@ int	main(void)
 	printf("Before: %s %s\n", str1, str2);
 	char	*str3 = ft_memccpy(str1, str2, 'C', 9);
 	printf("After: %s %s and %s\n", str1, str2, str3);
-	printf("Memchr %s\n", ft_memchr(str1, 'C', 9));
+	printf("Memchr %s\n", (char*)ft_memchr(str1, 'C', 9));
 	printf("Diff %d\n", ft_memcmp(str2, str1, 6));
-	printf("%s\n", ft_memmove(str1 + 1, str1, 4));
+	printf("%s\n", (char*)ft_memmove(str1 + 1, str1, 4));
+	printf("BSWAP %d %d\n", 0b1011, ft_bswap(0b1011));
+	int i = 65;
+	printf("Test %d\n", (((i - 1) >> 5) + 1) << 5);
 	return (0);
 }

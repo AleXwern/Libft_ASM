@@ -34,7 +34,9 @@ SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_memccpy.asm ft_memchr.asm ft_memcmp.asm ft_memcpy.asm \
 		ft_memmove.asm \
 		ft_isalpha.asm ft_isascii.asm ft_isblank.asm ft_isdigit.asm ft_isalnum.asm\
-		ft_isprint.asm ft_isnegative.asm
+		ft_isprint.asm ft_isnegative.asm \
+		ft_bswap.asm \
+		ft_test.asm
 SRCEXT	= .asm
 OBJEXT	= .o
 SRC		= $(addprefix ./src/,$(SRCFILE))
@@ -59,7 +61,9 @@ $(NAME): $(OBJ)
 
 test: $(NAME)
 	gcc -no-pie -I . tests/main.c $(NAME) -o testfunc
+#gcc -no-pie -I . tests/main.c libft_c.a -o testfuncc
 	./testfunc
+#./testfuncc
 
 time:
 	@gcc -no-pie -I . tests/time.c $(NAME) -o time
