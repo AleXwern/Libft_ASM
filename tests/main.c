@@ -16,6 +16,9 @@
 int	main(void)
 {
 	char	*str = (char*)malloc(10);
+	char	*doub = (char*)malloc(20);
+	ft_bzero(doub, 20);
+	doub = ft_memset(doub, 'C', 10);
 
 	//printf("Length %ld\n", ft_strlen("Hello there!"));
 	ft_putchar('Z');
@@ -47,5 +50,9 @@ int	main(void)
 	printf("BSWAP %d %d\n", 0b1011, ft_bswap(0b1011));
 	int i = 65;
 	printf("Test %d\n", (((i - 1) >> 5) + 1) << 5);
+	printf("Strcat %s\n", ft_strcat(doub, " hello"));
+	printf("Strchr %s\n", ft_strchr("aabcdefghijklm", 'a'));
+	printf("Strcmp %d\n", ft_strcmp("abcdefghijklm", "abcdefghijklm"));
+	printf("Strcpy %s\n", ft_strcpy(doub, "ghijklm"));
 	return (0);
 }
