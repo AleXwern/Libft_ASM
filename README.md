@@ -27,9 +27,9 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | memccpy          | **YES**                                                                                  |
 | memchr           | **YES**                                                                                  |
 | memcmp           | **YES**                                                                                  |
-| memcpy           | **X**                                                                                  |
-| memdel           | **X**                                                                                  |
-| memmove          | **X**                                                                                  |
+| memcpy           | **YES**                                                                                  |
+| memdel           | **x**                                                                                  |
+| memmove          | **YES**                                                                                  |
 | memset           | **YES**                                                                                  |
 | printmem         | **X**                                                                                  |
 | putchar          | **YES**                                                                                  |
@@ -43,17 +43,17 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | putstr           | **YES**                                                                                  |
 | putstr_fd        | **YES**                                                                                  |
 | quadjoin         | **X**                                                                                  |
-| strcat           | **X**                                                                                  |
-| strchr           | **X**                                                                                  |
-| strclr           | **X**                                                                                  |
-| strcmp           | **X**                                                                                  |
-| strcpy           | **X**                                                                                  |
+| strcat           | **YES**                                                                                  |
+| strchr           | **YES**                                                                                  |
+| strclr           | **YES**                                                                                  |
+| strcmp           | **YES**                                                                                  |
+| strcpy           | **YES**                                                                                  |
 | strdel           | **X**                                                                                  |
 | strdup           | **X**                                                                                  |
-| strequ           | **X**                                                                                  |
+| strequ           | **YES**                                                                                  |
 | strfjoin         | **X**                                                                                  |
-| striter          | **X**                                                                                  |
-| striteri         | **X**                                                                                  |
+| striter          | **YES**                                                                                  |
+| striteri         | **YES**                                                                                  |
 | strjoin          | **X**                                                                                  |
 | strlcat          | **X**                                                                                  |
 | strlen           | **YES**                                                                                  |
@@ -81,4 +81,4 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | bswap            | Swaps byte order betweeen little and big endian                                         |
 
 # Issues
-1. Print functions have issues writing some text?? Set array is issue but malloced/const isn't.
+1. Print functions have issues writing some text. Arrays are too far away?

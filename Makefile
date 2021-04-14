@@ -30,7 +30,8 @@ SRCFILE	= ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 #This is to test spesific functions and removing it will allow entire thing to be used
 SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_putstr.asm ft_putendl.asm ft_putchar.asm ft_memset.asm \
-		ft_atoi.asm ft_strcpy.asm \
+		ft_atoi.asm ft_strcpy.asm ft_strclr.asm ft_strequ.asm \
+		ft_striter.asm ft_striteri.asm \
 		ft_memccpy.asm ft_memchr.asm ft_memcmp.asm ft_memcpy.asm \
 		ft_memmove.asm ft_strcat.asm ft_strchr.asm ft_strcmp.asm ft_bzero.asm \
 		ft_isalpha.asm ft_isascii.asm ft_isblank.asm ft_isdigit.asm ft_isalnum.asm\
@@ -62,9 +63,9 @@ $(NAME): $(OBJ)
 
 test: $(NAME)
 	gcc -no-pie -g -I . tests/main.c $(NAME) -o testfunc
-#gcc -no-pie -I . tests/main.c libft_c.a -o testfuncc
+#	gcc -no-pie -I . tests/main.c libft_c.a -o testfuncc
 	./testfunc
-#./testfuncc
+#	./testfuncc
 
 time:
 	@gcc -no-pie -I . tests/time.c $(NAME) -o time
@@ -77,6 +78,12 @@ time:
 	@/bin/rm -f time
 	@/bin/rm -f C.txt
 	@/bin/rm -f ASM.txt
+
+host:
+ifeq ($(HOSTTYPE),)
+HOSTTYPE := $(shell uname -m)_$(shell uname -s)
+endif
+	@echo $(HOSTTYPE)
 
 clean:
 	/bin/rm -f $(OBJ)

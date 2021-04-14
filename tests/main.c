@@ -13,8 +13,12 @@
 #include "libft_asm.h"
 #include <stdio.h>
 
+void	iterhelper(char *str);
+void	iterihelper(unsigned int i, char *str);
+
 int	main(void)
 {
+	char	dum[10];
 	char	*str = (char*)malloc(10);
 	char	*doub = (char*)malloc(20);
 	ft_bzero(doub, 20);
@@ -32,6 +36,7 @@ int	main(void)
 	ft_putstr("IEAAAA\n");
 	printf("len: %ld\n", ft_strlen(str));
 	ft_putendl("--AAA--");
+	printf("Ptrs %p %p %p\n", dum, str, "ffd");
 	printf("Number %d\n", ft_atoi("2147483647"));
 	printf("NNumber %d\n", ft_atoi("-2147483648"));
 	printf("Alpha %d\n", ft_isalpha('a'));
@@ -54,5 +59,28 @@ int	main(void)
 	printf("Strchr %s\n", ft_strchr("aabcdefghijklm", 'a'));
 	printf("Strcmp %d\n", ft_strcmp("abcdefghijklm", "abcdefghijklm"));
 	printf("Strcpy %s\n", ft_strcpy(doub, "ghijklm"));
+	printf("Strequ %d\n", ft_strequ("abcdefghijklm", "abcdefghijklm"));
+	ft_striter(doub, iterhelper);
+	printf("Striter %s\n", doub);
+	ft_bzero(doub, 20);
+	ft_memset(doub, 'a', 10);
+	ft_striteri(doub, iterihelper);
+	printf("Striteri %s\n", doub);
 	return (0);
+}
+
+void	iterhelper(char *str)
+{
+	if (*str <= 'z' && *str >= 'a')
+		*str -= 32;
+	else if (*str <= 'Z' && *str >= 'A')
+		*str += 32;
+}
+
+void	iterihelper(unsigned int i, char *str)
+{
+	//printf("helper %d %c\n", i, *str);
+	*str = (i % 10) + 48;
+	if (i > 20)
+		exit(0);
 }

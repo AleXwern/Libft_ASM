@@ -14,10 +14,9 @@
 
 int		main(void)
 {
-	int		i = 0;
-	while (i++ < 100000)
-	{
-		ft_putendl("There will be so much text soon.");
-	}
+	char *screen = (char*)malloc(1080 * 4 * 720);
+	for (int i = 0; i < 1000; i++)
+		ft_bzero(screen, 1080 * 4 * 720);
+	free(screen);
 	return (0);
 }
