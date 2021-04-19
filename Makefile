@@ -11,7 +11,11 @@
 # **************************************************************************** #
 
 NAME	= libft_asm.a
+ifeq ($(OS),Windows_NT)     # is Windows_NT on XP, 2000, 7, Vista, 10...
+ELF 	= win64
+else
 ELF		= elf64
+endif
 FLAG	= -no-pie
 SRCFILE	= ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 	ft_memccpy ft_putendl_fd ft_strdel ft_strncat ft_strtrim \
@@ -36,7 +40,7 @@ SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_memmove.asm ft_strcat.asm ft_strchr.asm ft_strcmp.asm ft_bzero.asm \
 		ft_isalpha.asm ft_isascii.asm ft_isblank.asm ft_isdigit.asm ft_isalnum.asm\
 		ft_isprint.asm ft_isnegative.asm \
-		ft_bswap.asm \
+		ft_bswap.asm ft_rotate_left.asm ft_rotate_right.asm \
 		ft_test.asm
 SRCEXT	= .asm
 OBJEXT	= .o
@@ -67,6 +71,9 @@ test: $(NAME)
 	./testfunc
 #	./testfuncc
 
+memory: $(NAME)
+	gcc -no-pie -g -I . tests/mmap_malloc.c $(NAME) -o mmalloc
+	time ./mmalloc
 time:
 	@gcc -no-pie -I . tests/time.c $(NAME) -o time
 	@echo "timing ASM library."
@@ -79,17 +86,13 @@ time:
 	@/bin/rm -f C.txt
 	@/bin/rm -f ASM.txt
 
-host:
-ifeq ($(HOSTTYPE),)
-HOSTTYPE := $(shell uname -m)_$(shell uname -s)
-endif
-	@echo $(HOSTTYPE)
-
 clean:
 	/bin/rm -f $(OBJ)
 	/bin/rm -rf ./obj
 
 fclean: clean
 	/bin/rm -f $(NAME)
+	/bin/rm -f testfunc
+	/bin/rm -f mmalloc
 
 re: fclean all

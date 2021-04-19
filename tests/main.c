@@ -25,6 +25,11 @@ int	main(void)
 	doub = ft_memset(doub, 'C', 10);
 
 	//printf("Length %ld\n", ft_strlen("Hello there!"));
+	char *map = (char*)ft_test(20);
+	ft_memcpy(map, "Hello world and pe\n", 20);
+	ft_test2(map, 20);
+	write(1, map, 20);
+	printf("mmap len %p\n", map);
 	ft_putchar('Z');
 	ft_putstr("Yoo dudes\n");
 	ft_putendl("No linefeed btw");
@@ -66,6 +71,8 @@ int	main(void)
 	ft_memset(doub, 'a', 10);
 	ft_striteri(doub, iterihelper);
 	printf("Striteri %s\n", doub);
+	printf("Rotate left %d\n", ft_rotate_left(0b1010101, 16));
+	printf("Rotate right %d\n", ft_rotate_right(0b1010101, 1));
 	return (0);
 }
 

@@ -3,7 +3,14 @@ The aim of this project is for me to learn more about x64 Assembly and at the si
 the school projects maybe I can have an excuse to use this and get some sort of performance gain from it. Most probably not but it's a fun little project anyway. If anything, using optimization flags is kinda sometimes forbidden maybe (it's so hazy if it is or not and I'd rather not twist hands about it) so if I just write the assembly like -OX then it's fine right?</br>
 As more recent thing, I've been reading through AMD64 Architecture
 Programmer’s Manuals and picked up some fancy instructions and now I have a small subset of Libft_ASM original functions that use those instructions.</br>
-Compiles at least on Linux env. Have not tested on others yet. Just run make in terminal and you can link the libft_asm.a to your program. libft_asm.h is the related C header.
+You will need Make and NASM to compile which you can grab from https://www.nasm.us/ or install through Linux packages. Just run make in terminal and you can link the libft_asm.a to your program. libft_asm.h is the related C header.
+
+# TODO
+
+1. Create first versions of all basic Libft functions. Proper comments and descriptions included.
+2. Windows uses different registers to pass arguments to functions so port them over. It's a bit of work but most of the time it only involves swapping registers around.
+3. New functions! This is assembly and there's an entire world of things I can do here that are not implemented in C/C++ so I'm going to take full use of that.
+4. Own malloc. First I need to get the C version done but once that exists the ASM version should be easier to do since I have a proper ground to work on. I did some testing on just MMAP and it has massive overhead which I'm definitely not a fan of so I need the entire malloc around it.
 
 # Libft Functions
 
@@ -11,6 +18,7 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | ---------------- | :---------------------------------------------------------------------------------------: |
 | abs              | **YES**                                                                                  |
 | atoi             | **Kinda**                                                                                  |
+| atof             | **X**                                                                                  |
 | bzero            | **YES**                                                                                  |
 | intsize          | **X**                                                                                  |
 | isalnum          | **YES**                                                                                  |
@@ -23,6 +31,7 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | isprint          | **YES**                                                                                  |
 | itoa             | **X**                                                                                  |
 | lcm              | **X**                                                                                  |
+| listlen          | **X**                                                                                  |
 | memalloc         | **X**                                                                                  |
 | memccpy          | **YES**                                                                                  |
 | memchr           | **YES**                                                                                  |
@@ -43,6 +52,8 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | putstr           | **YES**                                                                                  |
 | putstr_fd        | **YES**                                                                                  |
 | quadjoin         | **X**                                                                                  |
+| realloc          | **X**                                                                                  |
+| splitfree        | **X**                                                                                  |
 | strcat           | **YES**                                                                                  |
 | strchr           | **YES**                                                                                  |
 | strclr           | **YES**                                                                                  |
@@ -66,6 +77,7 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | strnew           | **X**                                                                                  |
 | strnstr          | **X**                                                                                  |
 | strrchr          | **X**                                                                                  |
+| strsjoin         | **X**                                                                                  |
 | strsplit         | **X**                                                                                  |
 | strstr           | **X**                                                                                  |
 | strsub           | **X**                                                                                  |
@@ -73,12 +85,15 @@ Compiles at least on Linux env. Have not tested on others yet. Just run make in 
 | tolower          | **X**                                                                                  |
 | toupper          | **X**                                                                                  |
 | wordlen          | **X**                                                                                  |
+| get_next_line    | **X**                                                                                  |
 
 # Libft_ASM Original Functions
 
 | Function Name    | Description                                                                            |
 | ---------------- | :---------------------------------------------------------------------------------------: |
 | bswap            | Swaps byte order betweeen little and big endian                                         |
+| rotate_left      | Rotates num left by n bits. Overflow rolls back to right end                            |
+| rotate_right     | Rotates num right by n bits. Overflow rolls back to left end                            |
 
 # Issues
 1. Print functions have issues writing some text. Arrays are too far away?

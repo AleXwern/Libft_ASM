@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_asm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anystrom <anystrom@hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2021/03/17 16:13:17 by AleXwern         ###   ########.fr       */
+/*   Updated: 2021/04/19 12:03:54 by anystrom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 **	Purely there so it's easier to work with multiple devices.
 */
 # ifndef INT_MIN
-#  define INT_MIN	-2147483647
+#  define INT_MIN	0xffffffff
 # endif
 # define WORD		32
 # ifdef _WIN64 //Remove for final version
@@ -33,12 +33,8 @@
 #  define ENV64BIT
 # endif
 
-/*
-** Typedefine unsigned variable to more compact form based on
-** system architechture.
-** aka invoke compiler error if bad system.
-*/
 # ifdef ENV64BIT
+typedef unsigned long	t_uint64;
 typedef unsigned int	t_uint32;
 typedef unsigned short	t_uint16;
 typedef unsigned char	t_uint8;
@@ -66,6 +62,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_wordlen(char const *str, char del);
 
+double	ft_atof(const char *str);
 double	ft_fabs(double num);
 
 char	*ft_itoa(int n);
@@ -89,6 +86,7 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 
+size_t	ft_listlen(char	**list);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
 
@@ -111,16 +109,26 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbrln(int n);
 void	ft_putstr(char const *s);
 void	ft_putstr_fd(const char *s, int fd);
+void	*ft_realloc(void *ptr, size_t newlen, size_t oldlen);
+void	ft_splitfree(char **c);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 void	ft_striter(char *s, void (*f)(char *));
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	*ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /*
-**     LibftASM-only functions
+**	LibftASM-only functions
+**	Part of the reason why we are here
+**	because ex. C doesn't implement bitwise rotation
 */
 t_uint32	ft_bswap(t_uint32 n);
+t_uint32	ft_rotate_left(t_uint32 num, t_uint32 n);
+t_uint32	ft_rotate_right(t_uint32 num, t_uint32 n);
 
-t_uint32	ft_test(t_uint32 n);
+/*
+** Test functions (duh)
+*/
+void	*ft_test(size_t len);
+void	ft_test2(void *ptr, size_t len);
 
 #endif
