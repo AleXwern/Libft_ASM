@@ -35,7 +35,7 @@ SRCFILE	= ft_memalloc ft_putendl ft_strcpy ft_strmapi ft_strsub \
 SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_putstr.asm ft_putendl.asm ft_putchar.asm ft_memset.asm \
 		ft_atoi.asm ft_strcpy.asm ft_strclr.asm ft_strequ.asm \
-		ft_striter.asm ft_striteri.asm \
+		ft_striter.asm ft_striteri.asm ft_atof.asm ft_strlcat.asm \
 		ft_memccpy.asm ft_memchr.asm ft_memcmp.asm ft_memcpy.asm \
 		ft_memmove.asm ft_strcat.asm ft_strchr.asm ft_strcmp.asm ft_bzero.asm \
 		ft_isalpha.asm ft_isascii.asm ft_isblank.asm ft_isdigit.asm ft_isalnum.asm\

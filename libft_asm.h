@@ -6,7 +6,7 @@
 /*   By: anystrom <anystrom@hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2021/04/19 12:03:54 by anystrom         ###   ########.fr       */
+/*   Updated: 2021/04/20 14:22:49 by anystrom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ t_uint32	ft_rotate_right(t_uint32 num, t_uint32 n);
 /*
 ** Test functions (duh)
 */
-void	*ft_test(size_t len);
+double	ft_test(int i);
 void	ft_test2(void *ptr, size_t len);
 
 #endif

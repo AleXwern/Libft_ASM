@@ -3,7 +3,8 @@ The aim of this project is for me to learn more about x64 Assembly and at the si
 the school projects maybe I can have an excuse to use this and get some sort of performance gain from it. Most probably not but it's a fun little project anyway. If anything, using optimization flags is kinda sometimes forbidden maybe (it's so hazy if it is or not and I'd rather not twist hands about it) so if I just write the assembly like -OX then it's fine right?</br>
 As more recent thing, I've been reading through AMD64 Architecture
 Programmer’s Manuals and picked up some fancy instructions and now I have a small subset of Libft_ASM original functions that use those instructions.</br>
-You will need Make and NASM to compile which you can grab from https://www.nasm.us/ or install through Linux packages. Just run make in terminal and you can link the libft_asm.a to your program. libft_asm.h is the related C header.
+You will need Make and NASM to compile which you can grab from https://www.nasm.us/ or install through Linux packages. Just run make in terminal and you can link the libft_asm.a to your program. libft_asm.h is the related C header.</br>
+Do note that Windows passes arguments to functions in different registers than on Lunix/Mac so none of these actually work on Windows for now. Also interrupts in general are apparently a different world but that an issue for time when I have the first version done in its entirety.
 
 # TODO
 
@@ -18,7 +19,7 @@ You will need Make and NASM to compile which you can grab from https://www.nasm.
 | ---------------- | :---------------------------------------------------------------------------------------: |
 | abs              | **YES**                                                                                  |
 | atoi             | **Kinda**                                                                                  |
-| atof             | **X**                                                                                  |
+| atof             | **YES**                                                                                  |
 | bzero            | **YES**                                                                                  |
 | intsize          | **X**                                                                                  |
 | isalnum          | **YES**                                                                                  |
@@ -96,4 +97,4 @@ You will need Make and NASM to compile which you can grab from https://www.nasm.
 | rotate_right     | Rotates num right by n bits. Overflow rolls back to left end                            |
 
 # Issues
-1. Print functions have issues writing some text. Arrays are too far away?
+1. Print functions have issues writing some text. Arrays are too far away as in write doesn't take a long pointer??

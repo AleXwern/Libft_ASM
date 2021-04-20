@@ -25,11 +25,11 @@ int	main(void)
 	doub = ft_memset(doub, 'C', 10);
 
 	//printf("Length %ld\n", ft_strlen("Hello there!"));
-	char *map = (char*)ft_test(20);
-	ft_memcpy(map, "Hello world and pe\n", 20);
-	ft_test2(map, 20);
-	write(1, map, 20);
-	printf("mmap len %p\n", map);
+	//char *map = (char*)ft_test(20);
+	//ft_memcpy(map, "Hello world and pe\n", 20);
+	//ft_test2(map, 20);
+	//write(1, map, 20);
+	//printf("mmap len %p\n", map);
 	ft_putchar('Z');
 	ft_putstr("Yoo dudes\n");
 	ft_putendl("No linefeed btw");
@@ -73,6 +73,14 @@ int	main(void)
 	printf("Striteri %s\n", doub);
 	printf("Rotate left %d\n", ft_rotate_left(0b1010101, 16));
 	printf("Rotate right %d\n", ft_rotate_right(0b1010101, 1));
+	printf("Test %f\n", ft_test(3));
+	printf("Atof %f\n", ft_atof("  2.534567"));
+	ft_bzero(doub, 20);
+	ft_strcpy(doub, "Hello ");
+	printf("strlcat %u\n", ft_strlcat(doub, "world, it is me the creator of this library!", 20));
+	printf("strlcat len %u\n", ft_strlen(doub));
+	printf("strlcat string: %s\n", doub);
+
 	return (0);
 }
 
