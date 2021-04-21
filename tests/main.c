@@ -80,7 +80,10 @@ int	main(void)
 	printf("strlcat %u\n", ft_strlcat(doub, "world, it is me the creator of this library!", 20));
 	printf("strlcat len %u\n", ft_strlen(doub));
 	printf("strlcat string: %s\n", doub);
-
+	ft_bzero(doub, 20);
+	ft_strcpy(doub, "Hello ");
+	printf("strncat string: %s\n", ft_strncat(doub, "World abcdefghijklmnop", 10));
+	printf("strncmp string: %d\n",ft_strncmp("doubt", "doubty", 6));
 	return (0);
 }
 

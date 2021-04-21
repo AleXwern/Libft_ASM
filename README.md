@@ -1,6 +1,6 @@
 # Libft_ASM
 The aim of this project is for me to learn more about x64 Assembly and at the side since Libft is used in</br>
-the school projects maybe I can have an excuse to use this and get some sort of performance gain from it. Most probably not but it's a fun little project anyway. If anything, using optimization flags is kinda sometimes forbidden maybe (it's so hazy if it is or not and I'd rather not twist hands about it) so if I just write the assembly like -OX then it's fine right?</br>
+the school projects maybe I can have an excuse to use this and get some sort of performance gain from it. So far most functions seem to have some performance gain when compared to C version. Most notably ft_bzero is 10 times faster which is little mind boggling and makes me question if I can improve the C version. If anything, using optimization flags is kinda sometimes forbidden maybe (it's so hazy if it is or not and I'd rather not twist hands about it) so if I just write the assembly like -OX then it's fine right?</br>
 As more recent thing, I've been reading through AMD64 Architecture
 Programmer’s Manuals and picked up some fancy instructions and now I have a small subset of Libft_ASM original functions that use those instructions.</br>
 You will need Make and NASM to compile which you can grab from https://www.nasm.us/ or install through Linux packages. Just run make in terminal and you can link the libft_asm.a to your program. libft_asm.h is the related C header.</br>
@@ -32,7 +32,7 @@ Do note that Windows passes arguments to functions in different registers than o
 | isprint          | **YES**                                                                                  |
 | itoa             | **X**                                                                                  |
 | lcm              | **X**                                                                                  |
-| listlen          | **X**                                                                                  |
+| listlen          | **YES**                                                                                  |
 | memalloc         | **X**                                                                                  |
 | memccpy          | **YES**                                                                                  |
 | memchr           | **YES**                                                                                  |
@@ -67,12 +67,12 @@ Do note that Windows passes arguments to functions in different registers than o
 | striter          | **YES**                                                                                  |
 | striteri         | **YES**                                                                                  |
 | strjoin          | **X**                                                                                  |
-| strlcat          | **X**                                                                                  |
+| strlcat          | **YES**                                                                                  |
 | strlen           | **YES**                                                                                  |
 | strmap           | **X**                                                                                  |
 | strmapi          | **X**                                                                                  |
-| strncat          | **X**                                                                                  |
-| strncmp          | **X**                                                                                  |
+| strncat          | **YES**                                                                                  |
+| strncmp          | **YES**                                                                                  |
 | strncpy          | **X**                                                                                  |
 | strnequ          | **X**                                                                                  |
 | strnew           | **X**                                                                                  |

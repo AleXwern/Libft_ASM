@@ -5,6 +5,7 @@ section	.text
 ;Appends max dstsize-strlen(dst)-1 characters to dst from src, overriding the
 ;terminating null byte and adding new one to end of the new string. 
 ;User must handle the correct size of dst or buffer overrun causes undefined behaviour.
+;Returns the total amount of bytes that would have been copied but not necessarily what was copied.
 ;rdi=dst		rsi=src		rdx=dstsize
 ft_strlcat:
 	xor		rax, rax

@@ -15,8 +15,8 @@
 int		main(void)
 {
 	char *screen = (char*)malloc(1080 * 4 * 720);
-	for (int i = 0; i < 1000; i++)
-		ft_bzero(screen, 1080 * 4 * 720);
+	for (int i = 0; i < 150000000; i++)
+		ft_atof("-234.4567892");
 	free(screen);
 	return (0);
 }
