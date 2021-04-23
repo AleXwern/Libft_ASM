@@ -73,19 +73,19 @@ Do note that Windows passes arguments to functions in different registers than o
 | strmapi          | **X**                                                                                  |
 | strncat          | **YES**                                                                                  |
 | strncmp          | **YES**                                                                                  |
-| strncpy          | **X**                                                                                  |
-| strnequ          | **X**                                                                                  |
+| strncpy          | **YES**                                                                                  |
+| strnequ          | **YES**                                                                                  |
 | strnew           | **X**                                                                                  |
-| strnstr          | **X**                                                                                  |
-| strrchr          | **X**                                                                                  |
+| strnstr          | **YES**                                                                                  |
+| strrchr          | **YES**                                                                                  |
 | strsjoin         | **X**                                                                                  |
 | strsplit         | **X**                                                                                  |
-| strstr           | **X**                                                                                  |
+| strstr           | **YES**                                                                                  |
 | strsub           | **X**                                                                                  |
 | strtrim          | **X**                                                                                  |
-| tolower          | **X**                                                                                  |
-| toupper          | **X**                                                                                  |
-| wordlen          | **X**                                                                                  |
+| tolower          | **YES**                                                                                  |
+| toupper          | **YES**                                                                                  |
+| wordlen          | **YES**                                                                                  |
 | get_next_line    | **X**                                                                                  |
 
 # Libft_ASM Original Functions

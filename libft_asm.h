@@ -6,7 +6,7 @@
 /*   By: anystrom <anystrom@hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2021/04/20 14:22:49 by anystrom         ###   ########.fr       */
+/*   Updated: 2021/04/23 16:57:48 by anystrom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_wordlen(char const *str, char del);
 
 double	ft_atof(const char *str);
 double	ft_fabs(double num);
@@ -89,6 +88,7 @@ char	*ft_strtrim(char const *s);
 size_t	ft_listlen(char	**list);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
+size_t	ft_wordlen(char const *str, char del);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memalloc(size_t size);

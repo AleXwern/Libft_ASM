@@ -36,11 +36,12 @@ SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_putstr.asm ft_putendl.asm ft_putchar.asm ft_memset.asm \
 		ft_atoi.asm ft_strcpy.asm ft_strclr.asm ft_strequ.asm \
 		ft_striter.asm ft_striteri.asm ft_atof.asm ft_strlcat.asm \
-		ft_strncat.asm ft_strncmp.asm \
+		ft_strncat.asm ft_strncmp.asm ft_strncpy.asm ft_strnequ.asm \
+		ft_strnstr.asm ft_strrchr.asm ft_strstr.asm ft_wordlen.asm \
 		ft_memccpy.asm ft_memchr.asm ft_memcmp.asm ft_memcpy.asm \
 		ft_memmove.asm ft_strcat.asm ft_strchr.asm ft_strcmp.asm ft_bzero.asm \
 		ft_isalpha.asm ft_isascii.asm ft_isblank.asm ft_isdigit.asm ft_isalnum.asm\
-		ft_isprint.asm ft_isnegative.asm \
+		ft_isprint.asm ft_isnegative.asm ft_tolower.asm ft_toupper.asm \
 		ft_bswap.asm ft_rotate_left.asm ft_rotate_right.asm \
 		ft_test.asm
 SRCEXT	= .asm
