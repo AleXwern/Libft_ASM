@@ -1,17 +1,16 @@
 section	.text
    global ft_putchar
-	
-ft_putchar:
-	mov		byte [endl+0], dil
-	mov		rcx, endl	;string
-	push	rbx
-	mov		rdx, 1		;len
-	mov		rbx, 1
-	mov		rax, 4
-	int     80h
-	pop		rbx
-	
-	ret
 
-section .data			;I had some issues with getting the pointer of value so made this
-	endl	dq 0x0,0x0	;less than ideal workaround
+;void	ft_putchar(char c)
+;Writes a single character c to standard output.
+;rdi=c
+ft_putchar:
+	sub		rsp, 1
+	mov		byte [rsp], dil
+	mov		rdi, 1
+	mov		rsi, rsp
+	mov		rdx, 1
+	mov		rax, 1
+	syscall
+	add		rsp, 1
+	ret

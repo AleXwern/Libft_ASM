@@ -12,6 +12,7 @@
 
 #include "libft_asm.h"
 #include <stdio.h>
+#include <limits.h>
 
 void	iterhelper(char *str);
 void	iterihelper(unsigned int i, char *str);
@@ -20,9 +21,9 @@ int	main(void)
 {
 	char	dum[10];
 	char	*str = (char*)malloc(10);
-	char	*doub = (char*)malloc(20);
+	char	doub[20];
 	ft_bzero(doub, 20);
-	doub = ft_memset(doub, 'C', 10);
+	ft_memset(doub, 'C', 10);
 
 	//printf("Length %ld\n", ft_strlen("Hello there!"));
 	//char *map = (char*)ft_test(20);
@@ -31,10 +32,12 @@ int	main(void)
 	//write(1, map, 20);
 	//printf("mmap len %p\n", map);
 	ft_putchar('Z');
+	ft_putchar_fd('X', 1);
 	ft_putstr("Yoo dudes\n");
 	ft_putendl("No linefeed btw");
 	ft_putendl_fd("Error it is", 1);
 	ft_memset(str, 'A', 10);
+	ft_putendl(doub);
 	str[9] = '\n';
 	//write(1, str, 10);
 	ft_putstr(str);
@@ -73,7 +76,7 @@ int	main(void)
 	printf("Striteri %s\n", doub);
 	printf("Rotate left %d\n", ft_rotate_left(0b1010101, 16));
 	printf("Rotate right %d\n", ft_rotate_right(0b1010101, 1));
-	printf("Test %f\n", ft_test(3));
+	printf("Test %lx\n", ft_test(3));
 	printf("Atof %f\n", ft_atof("  2.534567"));
 	ft_bzero(doub, 20);
 	ft_strcpy(doub, "Hello ");
@@ -88,7 +91,25 @@ int	main(void)
 	//strnequ
 	printf("strnstr: %s\n", ft_strnstr("i have a doubt", "doubt", 14));
 	printf("strrchr: %s\n", ft_strrchr("i haove a dooubt", 'o'));
+	printf("GNL1: %u\n", get_next_line(8192, 0xffffffff));
+	printf("GNL2: %u\n", get_next_line(8192, 1));
+	printf("intsize: %lu\n", ft_intsize(LLONG_MAX));
+	char *mem = ft_memalloc(10);
+	for (int i = 0; i < 10; i++)
+		mem[i] += '0';
+	mem[9] = 0;
+	printf("Memalloc %s\n", mem);
+	ft_memdel(&mem);
+	printf("memdel %p\n", mem);
+	ft_puthex(0x123456789abcdef);
+	ft_putchar('\n');
+	ft_puthexln(0xfedcba9876543210);
 	return (0);
+}
+
+void	raw_to_ascii(char *str)
+{
+	*str += '0';
 }
 
 void	iterhelper(char *str)

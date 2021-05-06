@@ -6,7 +6,7 @@
 /*   By: anystrom <anystrom@hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2021/04/23 16:57:48 by anystrom         ###   ########.fr       */
+/*   Updated: 2021/05/06 14:46:01 by anystrom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ typedef unsigned char	t_uint8;
 #  error "System is of odd architechture. Stuff would break anyway."
 # endif
 
+# define BUFF_SIZE		32
+# define MAX_FD			8192
+
 int		ft_abs(int num);
 int		ft_atoi(const char *str);
-int		ft_intsize(int n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -85,6 +87,7 @@ char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 
+size_t	ft_intsize(long n);
 size_t	ft_listlen(char	**list);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
@@ -103,7 +106,7 @@ void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl(char const *s);
 void	ft_putendl_fd(const char *s, int fd);
-void	ft_puthex(unsigned int num);
+void	ft_puthex(unsigned long num);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbrln(int n);
@@ -117,6 +120,11 @@ void	ft_striter(char *s, void (*f)(char *));
 void	*ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /*
+**	Get next line
+*/
+int get_next_line(const int fd, char **line);
+
+/*
 **	LibftASM-only functions
 **	Part of the reason why we are here
 **	because ex. C doesn't implement bitwise rotation
@@ -128,7 +136,7 @@ t_uint32	ft_rotate_right(t_uint32 num, t_uint32 n);
 /*
 ** Test functions (duh)
 */
-double	ft_test(int i);
+long	ft_test(int i);
 void	ft_test2(void *ptr, size_t len);
 
 #endif

@@ -1,19 +1,17 @@
-extern ft_strlen
 section	.text
 	global ft_putstr_fd
-	
-;void	ft_putstr(const char *s, int fd)
+
+extern ft_strlen	
+
+;void	ft_putstr_fd(const char *s, int fd)
 ;Prints null terminated string s to set output.
 ;rdi=s	rsi=fd
 ft_putstr_fd:
+	push	rdi
 	call	ft_strlen	;Get string length -> RAX
-
+	mov     rdi, rsi	;fd
+	pop     rsi			;string
 	mov     rdx, rax	;length
-	mov     rcx, rdi	;string
-	push	rbx
-	mov     rbx, rsi	;fd
-	mov     rax, 4		;write
-	int     80h
-	pop		rbx
-
+	mov     rax, 1		;write
+	syscall
 	ret
