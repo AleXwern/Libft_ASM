@@ -21,7 +21,7 @@ Do note that Windows passes arguments to functions in different registers than o
 | atoi             | **Kinda**                                                                                  |
 | atof             | **YES**                                                                                  |
 | bzero            | **YES**                                                                                  |
-| intsize          | **X**                                                                                  |
+| intsize          | **YES**                                                                                  |
 | isalnum          | **YES**                                                                                  |
 | isalpha          | **YES**                                                                                  |
 | isascii          | **YES**                                                                                  |
@@ -33,20 +33,21 @@ Do note that Windows passes arguments to functions in different registers than o
 | itoa             | **X**                                                                                  |
 | lcm              | **X**                                                                                  |
 | listlen          | **YES**                                                                                  |
-| memalloc         | **X**                                                                                  |
+| memalloc         | **YES**                                                                                  |
 | memccpy          | **YES**                                                                                  |
 | memchr           | **YES**                                                                                  |
 | memcmp           | **YES**                                                                                  |
 | memcpy           | **YES**                                                                                  |
-| memdel           | **x**                                                                                  |
+| memdel           | **YES**                                                                                  |
 | memmove          | **YES**                                                                                  |
 | memset           | **YES**                                                                                  |
 | printmem         | **X**                                                                                  |
 | putchar          | **YES**                                                                                  |
-| putchar_fd       | **X**                                                                                  |
+| putchar_fd       | **YES**                                                                                  |
 | putendl          | **YES**                                                                                  |
 | putendl_fd       | **YES**                                                                                  |
-| puthex           | **X**                                                                                  |
+| puthex           | **YES**                                                                                  |
+| puthexln         | **YES**                                                                                  |
 | putnbr           | **X**                                                                                  |
 | putnbrln         | **X**                                                                                  |
 | putnbr_fd        | **X**                                                                                  |
@@ -97,4 +98,3 @@ Do note that Windows passes arguments to functions in different registers than o
 | rotate_right     | Rotates num right by n bits. Overflow rolls back to left end                            |
 
 # Issues
-1. Print functions have issues writing some text. Arrays are too far away as in write doesn't take a long pointer??
