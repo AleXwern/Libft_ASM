@@ -6,7 +6,7 @@
 /*   By: anystrom <anystrom@hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2021/05/06 14:46:01 by anystrom         ###   ########.fr       */
+/*   Updated: 2021/05/07 14:18:05 by anystrom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,19 +101,20 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	ft_memdel(void **ap);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
-void	ft_printmem(void *mem, size_t len);
+size_t	ft_printmem(void *mem, size_t len);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl(char const *s);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_puthex(unsigned long num);
+void	ft_puthexln(unsigned long num);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbrln(int n);
 void	ft_putstr(char const *s);
 void	ft_putstr_fd(const char *s, int fd);
 void	*ft_realloc(void *ptr, size_t newlen, size_t oldlen);
-void	ft_splitfree(char **c);
+size_t	ft_splitfree(char **c);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 void	ft_striter(char *s, void (*f)(char *));

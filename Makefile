@@ -44,7 +44,9 @@ SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_isprint.asm ft_isnegative.asm ft_tolower.asm ft_toupper.asm \
 		ft_bswap.asm ft_rotate_left.asm ft_rotate_right.asm get_next_line.asm \
 		ft_test.asm ft_intsize.asm ft_putchar_fd.asm ft_puthex.asm ft_puthexln.asm \
-		ft_memalloc.asm ft_memdel.asm
+		ft_memalloc.asm ft_memdel.asm ft_printmem.asm ft_quadjoin.asm ft_realloc.asm \
+		ft_splitfree.asm ft_strdel.asm ft_strdup.asm ft_strfjoin.asm ft_strsjoin.asm \
+		ft_strjoin.asm
 SRCEXT	= .asm
 OBJEXT	= .o
 SRC		= $(addprefix ./src/,$(SRCFILE))

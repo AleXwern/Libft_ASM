@@ -39,6 +39,8 @@ int	main(void)
 	ft_memset(str, 'A', 10);
 	ft_putendl(doub);
 	str[9] = '\n';
+	ft_memcpy(str, "1234567890abcdefghijklmn", 10);
+	ft_printmem(str, 10);
 	//write(1, str, 10);
 	ft_putstr(str);
 	ft_putstr("IEAAAA\n");
@@ -99,11 +101,23 @@ int	main(void)
 		mem[i] += '0';
 	mem[9] = 0;
 	printf("Memalloc %s\n", mem);
-	ft_memdel(&mem);
+	//ft_memdel(&mem);
 	printf("memdel %p\n", mem);
 	ft_puthex(0x123456789abcdef);
 	ft_putchar('\n');
 	ft_puthexln(0xfedcba9876543210);
+	//printf("printmem %lu\n", ft_printmem(NULL, 345));
+	printf("Quadjoin %s\n", ft_quadjoin("hi1", "hi2", "hi3", "hi4"));
+	//mem = ft_realloc(mem, 20, 10);
+	ft_memset(mem + 9, '1', 10);
+	printf("realloc: %s\n", mem);
+	printf("strdup: %s\n", ft_strdup("Hello world!"));
+	char *f = ft_strdup("Hello ");
+	char *s = ft_strdup("world!");
+	printf("%p %p\n", f, s);
+	printf("strfjoin: %s\n", ft_strfjoin(f, "world!"));
+	printf("strsjoin: %s\n", ft_strsjoin("Hello ", s));
+	printf("strjoin: %s\n", ft_strjoin("Hello ", "world!"));
 	return (0);
 }
 

@@ -53,21 +53,21 @@ Do note that Windows passes arguments to functions in different registers than o
 | putnbr_fd        | **X**                                                                                  |
 | putstr           | **YES**                                                                                  |
 | putstr_fd        | **YES**                                                                                  |
-| quadjoin         | **X**                                                                                  |
-| realloc          | **X**                                                                                  |
-| splitfree        | **X**                                                                                  |
+| quadjoin         | **YES**                                                                                  |
+| realloc          | **Kinda**                                                                                  |
+| splitfree        | **YES**                                                                                  |
 | strcat           | **YES**                                                                                  |
 | strchr           | **YES**                                                                                  |
 | strclr           | **YES**                                                                                  |
 | strcmp           | **YES**                                                                                  |
 | strcpy           | **YES**                                                                                  |
-| strdel           | **X**                                                                                  |
-| strdup           | **X**                                                                                  |
+| strdel           | **YES**                                                                                  |
+| strdup           | **YES**                                                                                  |
 | strequ           | **YES**                                                                                  |
-| strfjoin         | **X**                                                                                  |
+| strfjoin         | **YES**                                                                                  |
 | striter          | **YES**                                                                                  |
 | striteri         | **YES**                                                                                  |
-| strjoin          | **X**                                                                                  |
+| strjoin          | **YES**                                                                                  |
 | strlcat          | **YES**                                                                                  |
 | strlen           | **YES**                                                                                  |
 | strmap           | **X**                                                                                  |
@@ -79,7 +79,7 @@ Do note that Windows passes arguments to functions in different registers than o
 | strnew           | **X**                                                                                  |
 | strnstr          | **YES**                                                                                  |
 | strrchr          | **YES**                                                                                  |
-| strsjoin         | **X**                                                                                  |
+| strsjoin         | **YES**                                                                                  |
 | strsplit         | **X**                                                                                  |
 | strstr           | **YES**                                                                                  |
 | strsub           | **X**                                                                                  |
@@ -98,3 +98,5 @@ Do note that Windows passes arguments to functions in different registers than o
 | rotate_right     | Rotates num right by n bits. Overflow rolls back to left end                            |
 
 # Issues
+1. Atoi doesn't follow the standard and skip over blank characters at the start.
+2. Realloc makes any further malloc uses sometimes crash with "malloc(): corrupted top size". The exact reason is unknown.
