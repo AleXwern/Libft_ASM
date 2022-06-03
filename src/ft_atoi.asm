@@ -6,15 +6,16 @@ section .text
 ;for now we are only checking for whitespace and minus signs. Get it working and then
 ;worry about the rest.
 ft_atoi:
-	xor		eax, eax
+	xor		rax, rax
+	xor		rsi, rsi
 	test	rdi, rdi
 	jz		exit_zero
 	cmp		byte [rdi], 0x2D	;0x2D is '-' and 0x2B is '+'
 	jz		set_negflag			;If value is '-' we set value to negative, else continue
-	mov		ecx, 1
+	mov		rcx, 1
 	jmp		status_comparison
 set_negflag:					;0x2D
-	mov		ecx, -1
+	mov		rcx, -1
 	inc		rdi
 status_comparison:
 	mov		dl, byte [rdi]
@@ -23,8 +24,8 @@ status_comparison:
 	ja		std_exit
 	cmp		sil, 0
 	jb		std_exit
-	imul	eax, 10				;If we fall lthought checks we calc our new number
-	add		eax, esi
+	imul	rax, 10				;If we fall lthought checks we calc our new number
+	add		rax, rsi
 	inc		rdi
 	jmp		status_comparison
 std_exit:

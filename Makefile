@@ -42,9 +42,9 @@ SRCFILE	= ft_strlen.asm ft_putstr_fd.asm ft_putendl_fd.asm \
 		ft_memmove.asm ft_strcat.asm ft_strchr.asm ft_strcmp.asm ft_bzero.asm \
 		ft_isalpha.asm ft_isascii.asm ft_isblank.asm ft_isdigit.asm ft_isalnum.asm\
 		ft_isprint.asm ft_isnegative.asm ft_tolower.asm ft_toupper.asm \
-		ft_bswap.asm ft_rotate_left.asm ft_rotate_right.asm get_next_line.asm \
-		ft_test.asm ft_intsize.asm ft_putchar_fd.asm ft_puthex.asm ft_puthexln.asm \
-		ft_memalloc.asm ft_memdel.asm ft_printmem.asm ft_quadjoin.asm ft_realloc.asm \
+		ft_bswap.asm ft_rotate_left.asm ft_rotate_right.asm \
+		ft_intsize.asm ft_putchar_fd.asm ft_puthex.asm ft_puthexln.asm \
+		ft_memalloc.asm ft_memdel.asm ft_quadjoin.asm ft_realloc.asm \
 		ft_splitfree.asm ft_strdel.asm ft_strdup.asm ft_strfjoin.asm ft_strsjoin.asm \
 		ft_strjoin.asm
 SRCEXT	= .asm
@@ -63,22 +63,22 @@ all: $(NAME)
 
 ./obj/%.o:./src/%.asm
 	@mkdir -p obj
-	nasm -f $(ELF) $< -o $@
+	@nasm -f $(ELF) $< -o $@
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 	@echo done
 
 test: $(NAME)
-	gcc -no-pie -g -I . tests/main.c $(NAME) -o testfunc
+	@gcc -no-pie -g -I . tests/main.c $(NAME) -o testfunc
 #	gcc -no-pie -I . tests/main.c libft_c.a -o testfuncc
-	./testfunc
+	@./testfunc
 #	./testfuncc
 
 memory: $(NAME)
-	gcc -no-pie -g -I . tests/mmap_malloc.c $(NAME) -o mmalloc
-	time ./mmalloc
+	@gcc -no-pie -g -I . tests/mmap_malloc.c $(NAME) -o mmalloc
+	@time ./mmalloc
 time:
 	@gcc -no-pie -I . tests/time.c $(NAME) -o time
 	@echo "timing ASM library."
@@ -92,12 +92,12 @@ time:
 	@/bin/rm -f ASM.txt
 
 clean:
-	/bin/rm -f $(OBJ)
-	/bin/rm -rf ./obj
+	@/bin/rm -f $(OBJ)
+	@/bin/rm -rf ./obj
 
 fclean: clean
-	/bin/rm -f $(NAME)
-	/bin/rm -f testfunc
-	/bin/rm -f mmalloc
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f testfunc
+	@/bin/rm -f mmalloc
 
 re: fclean all
