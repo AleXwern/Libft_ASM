@@ -62,10 +62,12 @@ STOP	= \033[0m
 all: $(NAME)
 
 ./obj/%.o:./src/%.asm
+	@echo "Assembling $(GREEN)$@$(STOP)"
 	@mkdir -p obj
 	@nasm -f $(ELF) $< -o $@
 
 $(NAME): $(OBJ)
+	@echo "Building $(PURPLE)$@$(STOP)"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo done
