@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft_asm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anystrom <anystrom@hive.fi>                +#+  +:+       +#+        */
+/*   By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2021/05/07 14:18:05 by anystrom         ###   ########.fr       */
+/*   Updated: 2022/06/11 23:57:47 by AleXwern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_ASM_H
 # define LIBFT_ASM_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -24,10 +29,6 @@
 #  define INT_MIN	0xffffffff
 # endif
 # define WORD		32
-# ifdef _WIN64 //Remove for final version
-#  define read	_read
-#  define write	_write
-# endif
 
 # if _WIN32 || _WIN64 || __x86_64__ || __ppc64__
 #  define ENV64BIT
@@ -101,7 +102,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	ft_memdel(void **ap);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
-size_t	ft_printmem(void *mem, size_t len);
+void	ft_printmem(void *mem, size_t len);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl(char const *s);
@@ -114,7 +115,7 @@ void	ft_putnbrln(int n);
 void	ft_putstr(char const *s);
 void	ft_putstr_fd(const char *s, int fd);
 void	*ft_realloc(void *ptr, size_t newlen, size_t oldlen);
-size_t	ft_splitfree(char **c);
+void	ft_splitfree(char **c);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
 void	ft_striter(char *s, void (*f)(char *));
@@ -123,7 +124,7 @@ void	*ft_striteri(char *s, void (*f)(unsigned int, char *));
 /*
 **	Get next line
 */
-int get_next_line(const int fd, char **line);
+int 	get_next_line(const int fd, char **line);
 
 /*
 **	LibftASM-only functions
@@ -139,5 +140,9 @@ t_uint32	ft_rotate_right(t_uint32 num, t_uint32 n);
 */
 long	ft_test(int i);
 void	ft_test2(void *ptr, size_t len);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

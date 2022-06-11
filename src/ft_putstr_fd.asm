@@ -8,10 +8,10 @@ extern ft_strlen
 ;rdi=s	rsi=fd
 ft_putstr_fd:
 	push	rdi
-	call	ft_strlen	;Get string length -> RAX
-	mov     rdi, rsi	;fd
-	pop     rsi			;string
-	mov     rdx, rax	;length
-	mov     rax, 1		;write
+	call	ft_strlen wrt ..plt	;Get string length -> RAX
+	mov     rdi, rsi			;fd
+	pop     rsi					;string
+	mov     rdx, rax			;length
+	mov     rax, 1				;write
 	syscall
 	ret
