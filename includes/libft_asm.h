@@ -6,7 +6,7 @@
 /*   By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2022/06/11 23:57:47 by AleXwern         ###   ########.fr       */
+/*   Updated: 2022/06/19 21:15:52 by AleXwern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@
 extern "C" {
 #endif
 
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
+# ifndef ONLY_LIBFT
+#  include <string.h>
+#  include <unistd.h>
+#  include <stdlib.h>
+# else
+#  include "libft_sc.h"
+# endif
 
 /*
 **	Macros to fulfill spesific UNIX/Windows standards.
