@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_asm.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: AleXwern <alex.nystrom5@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2022/06/19 21:15:52 by AleXwern         ###   ########.fr       */
+/*   Updated: 2022/12/20 14:06:36 by AleXwern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ int 	get_next_line(const int fd, char **line);
 t_uint32	ft_bswap(t_uint32 n);
 t_uint32	ft_rotate_left(t_uint32 num, t_uint32 n);
 t_uint32	ft_rotate_right(t_uint32 num, t_uint32 n);
+int			ft_popcnt(t_uint32 num);
 
 /*
 ** Test functions (duh)
